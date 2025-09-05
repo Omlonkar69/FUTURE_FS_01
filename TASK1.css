@@ -24,9 +24,10 @@ body {
 
 .highlight{
     color: #0356fc;
-    
+    padding-right: 20px;
+    text-align: left;
     font-weight: 600;
-    font-size: 48px;
+    font-size: 38px;
     font-family: "Sans-Serif";
 }
 
@@ -407,3 +408,4 @@ span{
   font-family: "Bree Serif";
   text-align: center;
 }
+
