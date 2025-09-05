@@ -45,7 +45,7 @@
             <section id="home" class="hero">
               <div class="hero-content">
                 <h1>Hi, I'm Om Lonkar</h1>
-                <h2 class="highlight">Computer Engineering Student</h2>
+                <h2 class="highlight" id="rotating-text">Computer Engineering Student</h2>
                 <p>I'm passionate about creating innovative solutions and bringing ideas to life through code. Currently pursuing my degree in Computer Engineering with a focus on Fullstack Web Development.</p>
                 <div class="hero-buttons text-center">
                   <a href="#sectionprojects" class="btn btn-primary">View Projects</a>
@@ -56,6 +56,44 @@
                 <img src="Developer img.jpg" class="img-hero"/>
               </div>
             </section>
+
+            <script>
+                
+                document.addEventListener('DOMContentLoaded', function() {
+                    const rotatingText = document.getElementById('rotating-text');
+                    const texts = [
+                        "Python Developer",
+                        "Full Stack Developer",
+                        "Web Developer",
+                        "AI Enthusiast",
+                        "Problem Solver"
+                    ];
+                    
+                    let currentIndex = 0;
+                    
+                    function changeText() {
+                        // Fade out
+                        rotatingText.style.opacity = 0;
+                        
+                        setTimeout(() => {
+                            // Change text after fade out
+                            rotatingText.textContent = texts[currentIndex];
+                            
+                            // Fade in
+                            rotatingText.style.opacity = 1;
+                            
+                            // Move to next text (loop back to start if at end)
+                            currentIndex = (currentIndex + 1) % texts.length;
+                        }, 500); // Half of the transition time
+                    }
+                    
+                    // Set initial transition style
+                    rotatingText.style.transition = 'opacity 0.5s ease-in-out';
+                    
+                    // Change text every 3 seconds
+                    setInterval(changeText, 3000);
+                });
+            </script>
             
             <section id="sectionabout">
               
